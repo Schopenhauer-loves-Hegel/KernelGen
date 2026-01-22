@@ -140,6 +140,22 @@ class TestConverter:
             code
         )
 
+        # Remove bench_v2 import for CustomBenchmarkResult
+        code = re.sub(
+            r'^\s*from bench_v2\..*?CustomBenchmarkResult.*?\n',
+            '',
+            code,
+            flags=re.MULTILINE
+        )
+
+        # Replace CustomBenchmarkResult creation and return with print statement
+        code = re.sub(
+            r'result = CustomBenchmarkResult\(\s*ref_time=(\w+),\s*res_time=(\w+),\s*speedup=(\w+),?\s*\)\s*return result',
+            r'print(f"PyTorch: {\1:.4f}ms | Triton: {\2:.4f}ms | Speedup: {\3:.2f}x")',
+            code,
+            flags=re.DOTALL
+        )
+
         return code
 
     def convert_test_function_names(self, code: str) -> str:

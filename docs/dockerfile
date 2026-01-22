@@ -1,0 +1,18 @@
+FROM sphinxdoc/sphinx:latest
+RUN pip install --no-cache-dir \
+    myst-parser \
+    sphinx-design \
+    sphinx-copybutton \
+    sphinxext-rediraffe \
+    sphinxcontrib-mermaid \
+    sphinxext-opengraph \
+    sphinx-pyscript \
+    sphinx-tippy \
+    sphinx-togglebutton \
+    sphinx-autodoc2\
+    furo\
+    sphinx-breeze-theme\
+    sphinxawesome-theme\
+    pydata-sphinx-theme\
+    sphinx-book-theme\
+    sphinx-intl
