@@ -170,7 +170,7 @@ html_css_files = ["css/custom.css"]
 html_js_files = []
 
 # html_logo = "img/logo.svg"
-html_favicon = "_static/favicon.svg"
+html_favicon = "img/favicon.svg"
 
 # if docset == 'en':
 #     html_favicon = 'img/en-logo.svg'
